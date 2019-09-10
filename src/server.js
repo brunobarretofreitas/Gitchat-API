@@ -5,10 +5,12 @@ const cors = require('cors');
 const routes = require('./routes');
 const mongoose = require('mongoose');
 
+const { MONGOOSE_URL } = require('./config');
+
 const app = express();
 const server = http.Server(app);
 
-mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-1faci.mongodb.net/omnistack8?retryWrites=true&w=majority', {
+mongoose.connect(MONGOOSE_URL, {
   useNewUrlParser: true
 });
 
